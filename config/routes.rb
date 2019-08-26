@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :news
+  get 'pages/index'
+  root 'pages#index'
   get 'sessions/new'
   resources :users
   get "/login" => "sessions#new"
