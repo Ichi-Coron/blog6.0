@@ -17,16 +17,25 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+    <% user.errors.full_messages_for(:name).each do |message| %>
+    <p style="color:red"><i><%= message %></i></p>
+    <% end %>
   </div>
 
   <div class="field">
     <%= form.label :email %>
     <%= form.text_field :email %>
+    <% user.errors.full_messages_for(:email).each do |message| %>
+    <p style="color:red"><i><%= message %></i></p>
+    <% end %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password %>
+    <% user.errors.full_messages_for(:password).each do |message| %>
+    <p style="color:red"><i><%= message %></i></p>
+    <% end %>
   </div>
 
   <div class="field">
@@ -38,14 +47,20 @@
   <div class="field">
     <%= form.label :introduction %>
     <%= form.text_area :introduction %>
+    <% user.errors.full_messages_for(:introduction).each do |message| %>
+    <p style="color:red"><i><%= message %></i></p>
+    <% end %>
   </div>
 
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
+    <% user.errors.full_messages_for(:image).each do |message| %>
+    <p style="color:red"><i><%= message %></i></p>
+    <% end %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "新規登録" %>
   </div>
 <% end %>
